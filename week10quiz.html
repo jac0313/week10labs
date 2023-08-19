@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="p-div"></div>
+
+    <input id="p-input" type="text" placeholder="New Paragraph">
+    <button id="p-button">Create</button>
+
+    <script>
+        let paragraphID = 0
+        document.getElementById('p-button').addEventListener('click', ()=>{
+            let parent = document.getElementById('p-div')
+            let newElement = document.createElement('p')
+            newElement.textContent = document.getElementById('p-input').value
+            newElement.setAttribute('id',paragraphID++)
+
+            parent.appendChild(newElement)
+
+            document.getElementById('p-input').value = ''
+        })
+    </script>
+</body>
+</html>
